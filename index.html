@@ -1,9 +1,12 @@
 ---
 layout: default
+title: A.I.M.
+permalink: /
+description: The official site for A.I.M. the game.
 ---
 
 <div class="bg-primary h-100">
-    <img src="assets/banner.jpg" class="img-fluid" />
+    <img src="assets/banner.jpg" class="img-fluid" alt="A.I.M. Banner Image"/>
 </div>
 
 <div class="bg-primary text-white shadow">
@@ -20,10 +23,50 @@ layout: default
 
 <div class="bg-dark text-light crt-container">
     <div class="container py-4 font-monospace crt">
-        <span>>: START TRANSMISSION</span>
+        <span><b>>: START TRANSMISSION</b></span>
         <br/>
-        <p class="py-4">Blossom island is falling to a private military group named C.L.A.W (Counter Logistics Animal Warefare) led by their feline commander Rose Toge. With each sector of the island being lost to C.L.A.W. it is up to Ela, a mouse Navy Admiral, to stand her ground against the advancing enemy forces. Ela must work with any remaining allied animal soldiers, civilians and mercenaries to join forces, push back C.L.A.W. and retake blossom island!</p>
-        <span>>: END TRANSMISSION</span>
+        <p class="py-4">Blossom island is falling to a private military group named C.L.A.W. (Counter Logistics Animal Warefare) led by their feline commander Rose Toge. With each sector of the island being lost to C.L.A.W. it is up to Ela, a mouse Navy Admiral, to stand her ground against the advancing enemy forces. Ela must work with any remaining allied animal soldiers, civilians and mercenaries to join forces, push back C.L.A.W. and retake blossom island!</p>
+        <span><b>>: COMMANDING OFFICERS</b></span>
+        {% assign characters = site.characters | sort: "order" %}
+        {% for character in characters %}
+        <div class="row gap my-4">
+            <div class="col flex-md-grow-0 {% cycle 'order-md-0', 'order-md-2' %}">
+                <img class="img border border-white border-2 d-block m-auto" height="350" src="{{ character.image }}" alt="Image of {{character.name}}"/>
+            </div>
+            <div class="col-md flex-grow-1 order-1">
+                <h2>NAME: {{ character.name }}</h2>
+                <div class="row">
+                    <span>AGE: {{ character.age }}</span>
+                    <span>SPECIES: {{ character.species }}</span>
+                    <span>HEIGHT: {{ character.height }}</span>
+                    <span>BLOOD TYPE: {{ character.blood_type }}</span>
+                    <span>OCCUPATION: {{ character.occupation }}</span>
+                </div>
+                <p>{{ character.content | markdownify }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <span><b>>: END TRANSMISSION</b></span>
+    </div>
+</div>
+
+<div class="bg-white">
+    <div class="container py-4">
+        <div class="row text-center py-2">
+            <h1>The Team</h1>
+        </div>
+        <div class="row justify-content-evenly gap-large">
+            {% assign team = site.team | sort: "order" %}
+            {% for member in team %}
+                <div class="col flex-shrink-1 flex-grow-0 text-center">
+                    <a href="{{ member.link }}" target="_blank" rel="noopener noreferrer">
+                        <img class="rounded-circle zoom mb-3" src="{{ member.image }}" height="200" alt="Image of {{ member.name }}"/>
+                        <h3>{{ member.name }}</h3>
+                    </a>
+                    <p class="lead">{{ member.role }}</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 
@@ -33,14 +76,22 @@ layout: default
             <div class="row text-center">
                 <h1>Follow Us and Keep Updated</h1>
             </div>
-            <div class="row justify-content-center gap py-2">
-                <a class="btn btn-discord" href="https://discord.gg/v8AmUXqZHd">
+            <div class="row justify-content-center gap-large my-5">
+                <a class="btn btn-discord" href="https://discord.gg/v8AmUXqZHd" target="_blank" rel="noopener noreferrer">
                     <i class="bi bi-discord"></i>
                     &nbspDiscord
                 </a>
-                <a class="btn btn-twitter" href="https://twitter.com/Animal_Mercs">
+                <a class="btn btn-twitter" href="https://twitter.com/Animal_Mercs" target="_blank" rel="noopener noreferrer">
                     <i class="bi bi-twitter"></i>
                     &nbspTwitter
+                </a>
+                <a class="btn btn-instagram" href="https://www.instagram.com/animal_insurgent_mercenaries" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-instagram"></i>
+                    &nbspInstagram
+                </a>
+                <a class="btn btn-tiktok" href="https://www.tiktok.com/@a.i.m_game" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-tiktok"></i>
+                    &nbspTikTok
                 </a>
             </div>
             <div class="row text-center">

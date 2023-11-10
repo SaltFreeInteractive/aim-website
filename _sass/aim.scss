@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "x14y24pxHeadUpDaisy";
+    src: url("../assets/x14y24pxHeadUpDaisy.ttf");
+}
+
 $primary: #FF9C20;
 
 @import "bootstrap/bootstrap";
@@ -21,9 +26,42 @@ $primary: #FF9C20;
     background-color: #1DA1F2;
 }
 
+.btn-tiktok {
+    @extend .btn-social;
+    background-color: #000000;
+}
+
+.btn-instagram {
+    @extend .btn-social;
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
 .gap {
     gap: 10px;
 }
+
+.gap-large {
+    gap: 20px;
+}
+
+.redacted {
+    color: #000000;
+    background-color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.zoom {
+    transition: transform .4s;
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.1);
+  }
 
 .crt-container {
     position: relative;
@@ -45,6 +83,7 @@ $primary: #FF9C20;
 
 .crt {
     animation: textShadow 1.6s infinite;
+    font-family: "x14y24pxHeadUpDaisy" !important;
 }
 
 .crt::after {
