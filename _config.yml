@@ -27,6 +27,7 @@ url: "http://aimegame.co" # the base hostname & protocol for your site, e.g. htt
 twitter_username: jekyllrb
 github_username:  jekyll
 show_excerpts: true
+google_analytics: true
 
 # Build settings
 theme: minima
