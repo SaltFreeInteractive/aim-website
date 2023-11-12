@@ -57,11 +57,15 @@ $primary: #FF9C20;
 .zoom {
     transition: transform .4s;
     margin: 0 auto;
-  }
+}
   
-  .zoom:hover {
+.zoom:hover {
     transform: scale(1.1);
-  }
+}
+
+.pixel-font {
+    font-family: "x14y24pxHeadUpDaisy" !important;
+}
 
 .crt-container {
     position: relative;
@@ -83,7 +87,6 @@ $primary: #FF9C20;
 
 .crt {
     animation: textShadow 1.6s infinite;
-    font-family: "x14y24pxHeadUpDaisy" !important;
 }
 
 .crt::after {
