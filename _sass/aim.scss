@@ -40,6 +40,11 @@ $primary: #FF9C20;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 }
 
+.btn-youtube {
+    @extend .btn-social;
+    background-color: #FF0000;
+}
+
 .gap {
     gap: 10px;
 }
